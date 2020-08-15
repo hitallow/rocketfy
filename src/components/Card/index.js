@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
 import React, { useRef, useContext } from 'react'
 import { Container, Label } from './styles'
 import { useDrag, useDrop } from 'react-dnd'
-
+import propTypes from 'prop-types'
 import BoardContext from '../Board/context'
 
 export default function Card({ content, labels, user, id, index, listIndex }) {
@@ -59,4 +58,13 @@ export default function Card({ content, labels, user, id, index, listIndex }) {
       {user && <img src={user} alt="Avatar of user" />}
     </Container>
   )
+}
+
+Card.propTypes = {
+  content: propTypes.string,
+  labels: propTypes.array,
+  user: propTypes.string,
+  id: propTypes.number,
+  index: propTypes.number,
+  listIndex: propTypes.number,
 }

@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
+import PropTypes from 'prop-types'
 import { MdAdd } from 'react-icons/md'
 import { Container } from './styles'
 import Card from '../Card'
 
-export default function List({ data, index: listIndex }) {
+function List({ data, index: listIndex }) {
   return (
     <Container done={data.done}>
       <header>
@@ -23,3 +23,9 @@ export default function List({ data, index: listIndex }) {
     </Container>
   )
 }
+// add prop types validation
+List.propTypes = {
+  data: PropTypes.object,
+  index: PropTypes.number,
+}
+export default List
